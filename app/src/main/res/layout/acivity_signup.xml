@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryLight"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registre:"
+        android:textColor="#FFFF"
+        android:textSize="30dp"
+        android:layout_marginTop="16dp"/>
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="nom"
+        android:background="#FFFF"
+        android:textColor="@color/colorPrimaryLight"
+        android:textColorHint="@color/colorPrimaryLight"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:background="#FFFF"
+        android:textColor="@color/colorPrimaryLight"
+        android:textColorHint="@color/colorPrimaryLight"
+        android:layout_marginTop="10dp"
+
+        />
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="usuari"
+        android:background="#FFFF"
+        android:textColor="@color/colorPrimaryLight"
+        android:textColorHint="@color/colorPrimaryLight"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="contrasenya"
+        android:background="#FFFF"
+        android:textColor="@color/colorPrimaryLight"
+        android:textColorHint="@color/colorPrimaryLight"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="confirmació contrasenya"
+        android:background="#FFFF"
+        android:textColor="@color/colorPrimaryLight"
+        android:textColorHint="@color/colorPrimaryLight"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/sign_up"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="#FFFF"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="REGISTRA'T"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryLight"
+        />
+
+
+</LinearLayout>

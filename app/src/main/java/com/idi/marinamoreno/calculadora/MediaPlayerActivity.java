@@ -30,16 +30,18 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class MediaPlayerActivity extends BaseActivity implements View.OnClickListener{
+public class MediaPlayerActivity extends BaseActivity implements View.OnClickListener, MediaPlayer.OnPreparedListener {
 
+    private MediaPlayer mp;
+    private Boolean selected = false;
 
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_mediaplayer);
 
-        ImageButton openFile = (ImageButton) this.findViewById(R.id.play);
-        openFile.setOnClickListener(this);
+        ImageButton playFile = (ImageButton) this.findViewById(R.id.play);
+        playFile.setOnClickListener(this);
 
         ImageButton pauseFile = (ImageButton) this.findViewById(R.id.pause);
         pauseFile.setOnClickListener(this);
@@ -50,14 +52,17 @@ public class MediaPlayerActivity extends BaseActivity implements View.OnClickLis
         ImageButton selectFile = (ImageButton) this.findViewById(R.id.select);
         selectFile.setOnClickListener(this);
 
+        mp = new MediaPlayer();
+
+        mp.setOnPreparedListener(this);
+
     }
 
     public void onClick(View v) {
-        MediaPlayer mp = new MediaPlayer();
         switch(v.getId()) {
             case R.id.play: {
                 Log.v("AUDIO", "PLAY");
-                mp.start();
+                if (selected) mp.prepareAsync();
             }
             case R.id.pause:{
                 Log.v("AUDIO", "PAUSE");
@@ -70,9 +75,14 @@ public class MediaPlayerActivity extends BaseActivity implements View.OnClickLis
             }
             case R.id.select:{
                 Log.v("AUDIO", "SELECT");
+                selected = true;
                 selectSong();
             }
         }
+    }
+
+    public void onPrepared(MediaPlayer player) {
+        player.start();
     }
 
     @Override
@@ -84,15 +94,12 @@ public class MediaPlayerActivity extends BaseActivity implements View.OnClickLis
                 Uri selectedMusicUri = data.getData();
                 if (selectedMusicUri != null) {
                     Log.v("TAG", "PLAAAAAAAAAY");
-                    String pathFromUri = selectedMusicUri.getPath();
-                    MediaPlayer mp = new MediaPlayer();
                     try {
-                        Log.v("TAAAAAAAAAAAAAAG", pathFromUri);
 
-                        mp.setDataSource(this, Uri.parse(pathFromUri));
+                        mp.setDataSource(this, selectedMusicUri);
                         //mp.prepare();
                         Log.v("TAG", "STAAAAAAAART");
-                        mp.start();
+                        mp.prepareAsync();
 
                     } catch (SecurityException e) {
                         e.printStackTrace();
@@ -120,6 +127,7 @@ public class MediaPlayerActivity extends BaseActivity implements View.OnClickLis
 
         Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI);
         Log.v("AUDIO", "VAIG A LLENÇAR INTENT");
+        //intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivityForResult(intent, 10);
     }
 

@@ -32,8 +32,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     /*private static final String TWITTER_KEY = "marinamoreno44@hotmail.com";
     private static final String TWITTER_SECRET = "lacasitos612";*/
 
-    /*private static final String TWITTER_KEY = "3marinams";
-    private static final String TWITTER_SECRET = "lacasitos612";*/
     private String direccion_imagen;
 
     @Override
@@ -103,25 +101,29 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
+        setView();
         switch (id){
             case R.id.activity_calculadora: {
                 Intent i = new Intent(getApplicationContext(),CalculadoraActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 break;
             }
             case R.id.activity_settings:{
                 Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 break;
             }
             case R.id.activity_profile:{
                 Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 break;
             }
             case R.id.activity_music:{
                 Intent i = new Intent(getApplicationContext(),MediaPlayerActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 break;
             }

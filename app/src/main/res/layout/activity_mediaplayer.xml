@@ -3,16 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/music"
-        android:layout_gravity="center"
-        android:layout_marginTop="92dp"
-        android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <ImageButton
         android:id="@+id/stop"
         android:layout_width="70dp"
@@ -39,16 +29,6 @@
         android:layout_marginEnd="20dp" />
 
     <ImageButton
-        android:id="@+id/play"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@mipmap/ic_play_circle"
-        android:layout_gravity="bottom"
-        android:layout_alignTop="@+id/select"
-        android:layout_toLeftOf="@+id/select"
-        android:layout_toStartOf="@+id/select" />
-
-    <ImageButton
         android:id="@+id/pause"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -59,6 +39,31 @@
         android:layout_alignTop="@+id/stop"
         android:layout_toLeftOf="@+id/play"
         android:layout_toStartOf="@+id/play" />
+
+    <ImageButton
+        android:id="@+id/play"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/ic_play_circle"
+        android:layout_gravity="bottom"
+        android:layout_alignTop="@+id/select"
+        android:layout_toLeftOf="@+id/select"
+        android:layout_toStartOf="@+id/select"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/music"
+        android:layout_gravity="center"
+        android:layout_marginTop="92dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/stop"
+        android:layout_alignStart="@+id/stop"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp" />
 
 
 </RelativeLayout>

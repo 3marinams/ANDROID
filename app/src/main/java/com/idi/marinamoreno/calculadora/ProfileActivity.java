@@ -147,12 +147,14 @@ public class ProfileActivity extends BaseActivity implements View.OnClickListene
                                     .getExternalStorageDirectory(), "temp.jpg");
                             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));*/
                             Intent intent  = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                            //intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                             startActivityForResult(intent, 0);
                         } else if (items[item].equals("Galeria")) {
                             Intent intent = new Intent(
                                     Intent.ACTION_PICK,
                                     android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                             intent.setType("image/*");
+                            //intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                             startActivityForResult(
                                     Intent.createChooser(intent, "Select File"),
                                     1);

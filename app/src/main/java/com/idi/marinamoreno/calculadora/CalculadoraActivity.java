@@ -130,11 +130,13 @@ public class CalculadoraActivity extends BaseActivity implements View.OnClickLis
             case R.id.internet:{
                 Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
                 intent.putExtra(SearchManager.QUERY, t.getText().toString());
+                //intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
                 break;
             }
             case R.id.phone:{
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+t.getText().toString()));
+                //intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
                 break;
             }

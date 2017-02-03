@@ -17,6 +17,12 @@
         <activity
             android:name=".BaseActivity"
             android:theme="@style/AppTheme">
+
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,9 +30,8 @@
         </activity>
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".SignUpActivity"
             android:theme="@style/AppTheme">
-
         </activity>
 
         <activity
