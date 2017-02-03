@@ -3,6 +3,7 @@ package com.idi.marinamoreno.calculadora;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class SignUpActivity extends Activity  implements View.OnClickListener{
     DataBaseHleper helper;
     @Override
     public void onCreate(Bundle saveInstanceState){
+        Log.v("SIGN UP", "CREATE");
         super.onCreate(saveInstanceState);
         setContentView(R.layout.acivity_signup);
 
@@ -28,7 +30,9 @@ public class SignUpActivity extends Activity  implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
+        Log.v("SIGN UP", "CLICK");
         if (v.getId() == R.id.sign_up){
+            Log.v("SIGN UP", "JOJOJOJOJOJOO");
             EditText name = (EditText) findViewById(R.id.name);
             EditText email = (EditText) findViewById(R.id.email);
             EditText uname = (EditText) findViewById(R.id.username);
@@ -48,17 +52,19 @@ public class SignUpActivity extends Activity  implements View.OnClickListener{
             else {
                 //insert details in DB
 
+                Log.v("ENTRO", "!!!!!!!!!");
                 Contact c = new Contact();
                 c.setName(namestr);
+                Log.v("NAME: ", c.getName());
                 c.setEmail(emailstr);
+                Log.v("EMAIL: ", c.getEmail());
                 c.setUsername(unamestr);
+                Log.v("USER: ", c.getUsername());
                 c.setPassword(pass1str);
+                Log.v("PASS: ", c.getPassword());
 
                 helper = new DataBaseHleper(this);
                 helper.insertContact(c);
-
-                Toast temps = Toast.makeText(SignUpActivity.this, "Ja estàs registrat!", Toast.LENGTH_LONG);
-                temps.show();
 
                 Intent i = new Intent(getApplicationContext(),LoginActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY| FLAG_ACTIVITY_CLEAR_TOP);
