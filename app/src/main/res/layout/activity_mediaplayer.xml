@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/music"
+        android:layout_gravity="center"
+        android:layout_marginTop="92dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/stop"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/ic_stop_circle"
+        android:layout_gravity="bottom"
+        android:layout_alignTop="@+id/play"
+        android:layout_toLeftOf="@+id/pause"
+        android:layout_toStartOf="@+id/pause"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp" />
+
+    <ImageButton
+        android:id="@+id/select"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/ic_apps"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="53dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp" />
+
+    <ImageButton
+        android:id="@+id/play"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/ic_play_circle"
+        android:layout_gravity="bottom"
+        android:layout_alignTop="@+id/select"
+        android:layout_toLeftOf="@+id/select"
+        android:layout_toStartOf="@+id/select" />
+
+    <ImageButton
+        android:id="@+id/pause"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/ic_pause_circle"
+        android:layout_gravity="bottom"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignTop="@+id/stop"
+        android:layout_toLeftOf="@+id/play"
+        android:layout_toStartOf="@+id/play" />
+
+
+</RelativeLayout>

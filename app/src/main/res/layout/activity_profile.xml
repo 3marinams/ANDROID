@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/fotoperfil"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/perfil_copia"
+        android:scaleType="fitCenter"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Localitzazió:"
+        android:textColor="#000"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        />
+    <!--> CONNECTAR AMB GOOGLE MAPS<-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Intents:"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:hint="núm intents"
+            android:textColor="#000"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            />
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/S_toast"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="left"
+        android:text="Activar notificacions toast"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+    <Switch
+        android:id="@+id/S_estat"
+        android:layout_width="300dp"
+        android:layout_height="74dp"
+        android:layout_gravity="left"
+        android:text="Activar notificacions estat"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/fons"
+            android:layout_width="3000dp"
+            android:layout_height="250dp"
+            android:background="@drawable/fons"
+            android:layout_marginTop="7dp"
+            />
+        <ImageButton
+            android:id="@+id/perfil"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/perfil_copia"
+            android:scaleType="fitCenter"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:elevation="3dp"
+            />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="username"
+            android:textColor="#FFFF"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="140dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
