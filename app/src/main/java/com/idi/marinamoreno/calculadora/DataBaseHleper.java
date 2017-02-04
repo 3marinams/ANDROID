@@ -13,7 +13,6 @@ import android.util.Log;
 
 public class DataBaseHleper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "contacts.db";
     private static final String TABLE_NAME = "contacts";
     //private static final String COLUMN_ID = "id";
@@ -24,19 +23,19 @@ public class DataBaseHleper extends SQLiteOpenHelper {
     SQLiteDatabase db;
 
 
-    private static final String TABLE_CREATE = "CREATE TABLE " +  TABLE_NAME + "("
-                                                + COLUMN_NAME + "TEXT PRIMARY KEY, "
-                                                + COLUMN_EMAIL + "TEXT, "
-                                                + COLUMN_USERNAME + " TEXT NOT NULL"
-                                                + COLUMN_PASS + "TEXT NOT NULL"
-                                                + ");" ;
+    private static final String TABLE_CREATE = "CREATE TABLE " +  TABLE_NAME + " ( "
+            + COLUMN_NAME + " TEXT PRIMARY KEY , "
+            + COLUMN_EMAIL + " TEXT, "
+            + COLUMN_USERNAME + " TEXT NOT NULL, "
+            + COLUMN_PASS + " TEXT NOT NULL "
+            + " );" ;
 
 
 
 
     public DataBaseHleper (Context context){
         //constructora
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, 1);
     }
 
 
@@ -59,7 +58,6 @@ public class DataBaseHleper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(STATISTICS_TABLE_CREATE);
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + STATISTICS_TABLE_NAME);
@@ -95,7 +93,7 @@ public class DataBaseHleper extends SQLiteOpenHelper {
 
     public String searchPass(String uname, String password){
 
-        Cursor cursor = getReadableDatabase().rawQuery("SELECT username FROM user WHERE username='" + uname + "' and password ='" + password + "';", null);
+        Cursor cursor = getReadableDatabase().rawQuery("SELECT "+COLUMN_USERNAME+ " FROM "+TABLE_NAME+" WHERE "+COLUMN_USERNAME+"='" + uname + "' and "+COLUMN_PASS+" ='" + password + "';", null);
         String b;
         b = "";
         if (cursor.moveToFirst()){
@@ -105,7 +103,7 @@ public class DataBaseHleper extends SQLiteOpenHelper {
             while(cursor.moveToNext());
 
         }
-        db.close();
+        //db.close();//<-db aqui no te perquè estar oberta aixi que peta al fer el close
 
         if (b == "") return "not found";
         else return b;

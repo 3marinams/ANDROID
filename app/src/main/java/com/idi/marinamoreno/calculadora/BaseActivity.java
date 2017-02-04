@@ -18,19 +18,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import io.fabric.sdk.android.Fabric;
 
 import com.squareup.picasso.Picasso;
 
 
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-
-    /*private static final String TWITTER_KEY = "marinamoreno44@hotmail.com";
-    private static final String TWITTER_SECRET = "lacasitos612";*/
 
     private String direccion_imagen;
 
@@ -39,10 +32,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
-
-        /*TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Twitter(authConfig));*/
-
 
         setView();
 
@@ -127,6 +116,14 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(i);
                 break;
             }
+
+            case R.id.activity_game:{
+                Intent i = new Intent(getApplicationContext(),MemoryActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(i);
+                break;
+            }
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -7,16 +7,16 @@ import android.support.v7.app.AppCompatActivity;
  */
 
 public class Contact {
-    private int id;
+    //private int id;
     private String name, email, username,pass;
 
-    public void setId(int id){
+    /*public void setId(int id){
         this.id = id;
-    }
+    }*/
 
-    public int getId(){
+    /*public int getId(){
         return this.id;
-    }
+    }*/
 
     public void setName(String name){
         this.name = name;

@@ -4,6 +4,16 @@
     <group android:checkableBehavior="single">
 
         <item
+            android:id="@+id/activity_game"
+            android:title="Joc"
+            android:icon="@mipmap/ic_gamepad_variant"/>
+
+        <item
+            android:id="@+id/activity_ranking"
+            android:title="Ranking"
+            android:icon="@mipmap/ic_view_headline"/>
+
+        <item
             android:id="@+id/activity_music"
             android:title="Musica"
             android:icon="@mipmap/ic_music_note"/>
