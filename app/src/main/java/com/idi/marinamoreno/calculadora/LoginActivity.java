@@ -49,7 +49,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     pass1.show();
                 }
                 else {
-                    Log.v("ME CAGO EN TODO YA", "ESTOY HARTA DE LA P*** APP");
                     helper = new DataBaseHleper(this);
                     String password = helper.searchPass(str, pass_str);
 

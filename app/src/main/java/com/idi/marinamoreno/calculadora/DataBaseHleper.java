@@ -7,9 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/**
- * Created by marinamoreno on 3/2/17.
- */
 
 public class DataBaseHleper extends SQLiteOpenHelper {
 
@@ -108,25 +105,4 @@ public class DataBaseHleper extends SQLiteOpenHelper {
         if (b == "") return "not found";
         else return b;
     }
-
-    public Integer verify_account(String username, String password) {/*ok*/
-        Integer i = 0;
-        Cursor c;
-        String s = "";
-        c = getReadableDatabase().rawQuery("SELECT username FROM user WHERE username='" + username + "' and password ='" + password + "';", null);
-        if(c.moveToFirst()){
-            do{
-                //assing values
-                s = c.getString(c.getColumnIndex(COLUMN_USERNAME));
-                //Log.v("TAAAAGGGGGG", "Hola");
-                //Do something Here with values
-
-            }while(c.moveToNext());
-        }
-        c.close();
-        //Log.v("TAAAAGGGGGG", s);
-        if (!s.isEmpty()) return 1;
-        return i;
-    }
-
 }

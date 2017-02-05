@@ -1,5 +1,6 @@
 package com.idi.marinamoreno.calculadora;
 
+import android.support.annotation.BoolRes;
 import android.support.v7.app.AppCompatActivity;
 
 /**

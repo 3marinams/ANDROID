@@ -49,6 +49,11 @@
             android:theme="@style/AppTheme">
         </activity>
 
+        <activity
+            android:name=".MemoryActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
     </application>
 
 </manifest>

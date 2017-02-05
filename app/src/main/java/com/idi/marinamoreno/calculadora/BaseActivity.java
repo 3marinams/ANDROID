@@ -3,6 +3,7 @@ package com.idi.marinamoreno.calculadora;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -17,22 +18,21 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
 
 
-public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
-    private String direccion_imagen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_base);
-
         setView();
 
     }
@@ -64,6 +64,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         Log.v("TAAAAAAAAAAG", "setvieeeeeeeeeew");
         Picasso.with(BaseActivity.this).load(Uri.parse(str)).into(imageView);
 
+        ImageButton logout = (ImageButton) findViewById(R.id.logout);
+        logout.setOnClickListener(this);
+
         navigationView.setNavigationItemSelectedListener(this);
 
     }
@@ -94,35 +97,41 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         switch (id){
             case R.id.activity_calculadora: {
                 Intent i = new Intent(getApplicationContext(),CalculadoraActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                //i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
                 break;
             }
             case R.id.activity_settings:{
                 Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                //i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 break;
             }
             case R.id.activity_profile:{
                 Intent i = new Intent(getApplicationContext(),ProfileActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                //i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 break;
             }
             case R.id.activity_music:{
                 Intent i = new Intent(getApplicationContext(),MediaPlayerActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                //i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 break;
             }
 
             case R.id.activity_game:{
                 Intent i = new Intent(getApplicationContext(),MemoryActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                //i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 break;
             }
+            /*case R.id.logout: {
+                Log.v("TAG", "entro al logout");
+                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(i);
+                break;
+            }*/
 
         }
 
@@ -141,6 +150,18 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         setView();
     }
 
+    public void onClick(View v){
+
+        switch (v.getId()){
+            case R.id.logout: {
+                Log.v("TAG", "entro al logout");
+                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(i);
+                break;
+            }
+        }
+
+    }
 
 
 }
