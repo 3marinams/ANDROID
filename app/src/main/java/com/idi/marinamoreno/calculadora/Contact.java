@@ -8,16 +8,9 @@ import android.support.v7.app.AppCompatActivity;
  */
 
 public class Contact {
-    //private int id;
-    private String name, email, username,pass;
 
-    /*public void setId(int id){
-        this.id = id;
-    }*/
-
-    /*public int getId(){
-        return this.id;
-    }*/
+    private String name, username,pass;
+    private Integer intents;
 
     public void setName(String name){
         this.name = name;
@@ -25,14 +18,6 @@ public class Contact {
 
     public String getName(){
         return this.name;
-    }
-
-    public void setEmail(String email){
-        this.email = email;
-    }
-
-    public String getEmail(){
-        return this.email;
     }
 
     public void setUsername(String user){
@@ -49,5 +34,13 @@ public class Contact {
 
     public String getPassword(){
         return this.pass;
+    }
+
+    public void setIntents(Integer intents){
+        this.intents = intents;
+    }
+
+    public Integer getIntents(){
+        return this.intents;
     }
 }

@@ -25,17 +25,6 @@
         android:layout_marginTop="10dp"
         />
     <EditText
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Email"
-        android:background="#FFFF"
-        android:textColor="@color/colorPrimaryLight"
-        android:textColorHint="@color/colorPrimaryLight"
-        android:layout_marginTop="10dp"
-
-        />
-    <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="50dp"

@@ -3,8 +3,8 @@
     package="com.idi.marinamoreno.calculadora">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,47 +13,34 @@
         android:label="Crazy Peanuts"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".BaseActivity"
-            android:theme="@style/AppTheme">
-
-        </activity>
-
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SignUpActivity"
-            android:theme="@style/AppTheme">
-        </activity>
-
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".CalculadoraActivity"
-            android:theme="@style/AppTheme">
-        </activity>
-
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".ProfileActivity"
-            android:theme="@style/AppTheme">
-        </activity>
-
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".MediaPlayerActivity"
-            android:theme="@style/AppTheme">
-        </activity>
-
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".MemoryActivity"
-            android:theme="@style/AppTheme">
-        </activity>
-
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".RankingActivity"></activity>
     </application>
 
 </manifest>

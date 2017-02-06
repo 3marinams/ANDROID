@@ -17,7 +17,7 @@ import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
 public class SignUpActivity extends Activity  implements View.OnClickListener{
 
-    DataBaseHleper helper;
+    DataBaseHelper helper;
     @Override
     public void onCreate(Bundle saveInstanceState){
         Log.v("SIGN UP", "CREATE");
@@ -34,13 +34,13 @@ public class SignUpActivity extends Activity  implements View.OnClickListener{
         if (v.getId() == R.id.sign_up){
             Log.v("SIGN UP", "JOJOJOJOJOJOO");
             EditText name = (EditText) findViewById(R.id.name);
-            EditText email = (EditText) findViewById(R.id.email);
+            //EditText email = (EditText) findViewById(R.id.email);
             EditText uname = (EditText) findViewById(R.id.username);
             EditText pass1 = (EditText) findViewById(R.id.password);
             EditText pass2 = (EditText) findViewById(R.id.confirm_password);
 
             String namestr = name.getText().toString();
-            String emailstr = email.getText().toString();
+            //String emailstr = email.getText().toString();
             String unamestr = uname.getText().toString();
             String pass1str = pass1.getText().toString();
             String pass2str = pass2.getText().toString();
@@ -56,14 +56,12 @@ public class SignUpActivity extends Activity  implements View.OnClickListener{
                 Contact c = new Contact();
                 c.setName(namestr);
                 Log.v("NAME: ", c.getName());
-                c.setEmail(emailstr);
-                Log.v("EMAIL: ", c.getEmail());
                 c.setUsername(unamestr);
                 Log.v("USER: ", c.getUsername());
                 c.setPassword(pass1str);
                 Log.v("PASS: ", c.getPassword());
 
-                helper = new DataBaseHleper(this);
+                helper = new DataBaseHelper(this);
                 helper.insertContact(c);
 
                 Intent i = new Intent(getApplicationContext(),LoginActivity.class);

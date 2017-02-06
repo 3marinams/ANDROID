@@ -126,6 +126,12 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(i);
                 break;
             }
+            case R.id.activity_ranking:{
+                Intent i = new Intent(getApplicationContext(),RankingActivity.class);
+                //i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(i);
+                break;
+            }
             /*case R.id.logout: {
                 Log.v("TAG", "entro al logout");
                 Intent i = new Intent(getApplicationContext(), LoginActivity.class);

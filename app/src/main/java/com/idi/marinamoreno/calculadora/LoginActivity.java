@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,7 @@ import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
 public class LoginActivity extends Activity implements View.OnClickListener {
 
-    DataBaseHleper helper;
+    DataBaseHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +48,8 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                     pass1.show();
                 }
                 else {
-                    helper = new DataBaseHleper(this);
-                    String password = helper.searchPass(str, pass_str);
+                    helper = new DataBaseHelper(this);
+                    String password = helper.searchPass(str);
 
                     if (pass_str.equals(password)) {
                         Intent i = new Intent(LoginActivity.this, BaseActivity.class);
