@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/colorPrimaryLight"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="intents: "
+            android:textColor="#FFFF"
+            android:textSize="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="40dp"/>
+
+        <TextView
+            android:id="@+id/intents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#FFFF"
+            android:textSize="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"/>
+
+    </LinearLayout>
+
+
+
+<LinearLayout
+    android:layout_marginTop="120dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/fila0"
+        android:layout_above="@+id/fila1"
+        android:layout_marginBottom="7dp">
+
+
+
+        <ImageButton
+            android:id="@+id/memory_card0"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card1"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card2"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card3"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/fila1"
+        android:layout_above="@+id/fila2"
+        android:layout_marginBottom="7dp">
+
+        <ImageButton
+            android:id="@+id/memory_card4"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card5"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card6"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card7"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/fila2"
+        android:layout_above="@+id/fila3"
+        android:layout_marginBottom="7dp">
+
+        <ImageButton
+            android:id="@+id/memory_card8"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card9"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card10"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card11"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/fila3"
+        android:layout_marginBottom="7dp">
+        <!-->android:layout_alignParentStart="true"<-->
+
+
+        <ImageButton
+            android:id="@+id/memory_card12"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card13"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card14"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+        <ImageButton
+            android:id="@+id/memory_card15"
+            android:background="@drawable/memory_fons"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            />
+
+    </LinearLayout>
+</LinearLayout>
+
+</RelativeLayout>

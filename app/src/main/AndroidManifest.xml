@@ -36,10 +36,17 @@
             android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".MediaPlayerActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+
+        </activity>
+
         <activity
             android:name=".MemoryActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity android:name=".RankingActivity"></activity>
     </application>
 
