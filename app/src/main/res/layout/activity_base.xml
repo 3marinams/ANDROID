@@ -8,11 +8,10 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     android:id="@+id/drawer_layout">
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFF">
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -40,9 +39,10 @@
         android:layout_height="match_parent"
         android:id="@+id/frame_base"
         android:background="#FFFF">
+
     </FrameLayout>
 
-</LinearLayout>
+</RelativeLayout>
 
 <android.support.design.widget.NavigationView
     android:id="@+id/nav_view"

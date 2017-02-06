@@ -27,7 +27,6 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.MyViewHo
             username = (TextView) view.findViewById(R.id.cv_user);
             intents = (TextView) view.findViewById(R.id.cv_intents);
             v = view;
-
         }
 
     }

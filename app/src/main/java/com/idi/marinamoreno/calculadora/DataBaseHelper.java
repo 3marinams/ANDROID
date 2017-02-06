@@ -21,6 +21,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_PASS = "pass";
     private static final String COLUMN_INTENTS = "intents";
     SQLiteDatabase db;
+    String username_active ="";
 
 
     private static final String TABLE_CREATE = "CREATE TABLE " +  TABLE_NAME + " ( "
@@ -35,9 +36,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             COLUMN_USERNAME,
             COLUMN_PASS,
             COLUMN_INTENTS};
-
-
-
 
     public DataBaseHelper(Context context){
         //constructora
@@ -82,7 +80,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public String searchPass(String uname){
 
         Cursor cursor = getReadableDatabase().query(TABLE_NAME, allColumns, COLUMN_USERNAME + "= '" + uname + "'",null, null, null,null);
-
+        username_active = uname;
         String p = "";
 
         if(cursor != null){
@@ -117,5 +115,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         c.setPassword(cursor.getString(2));
         c.setIntents(cursor.getInt(3));
         return c;
+    }
+
+    public void setIntents(Integer intents){
+        db = getWritableDatabase();
+        Log.v("INTENTS INI = ", COLUMN_INTENTS);
+        db.execSQL("UPDATE " + TABLE_NAME + " SET " + COLUMN_INTENTS + "='" + intents + "' WHERE " + COLUMN_USERNAME + "=' " + username_active + "';");
+        Log.v("INTENTS FI = ", COLUMN_INTENTS);
+        db.close();
     }
 }

@@ -3,7 +3,9 @@ package com.idi.marinamoreno.calculadora;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -29,7 +31,11 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memory);
+        set();
 
+    }
+
+    private void set(){
         helper = new DataBaseHelper(this);
 
         ImageButton memory_card0 = (ImageButton) findViewById(R.id.memory_card0);
@@ -80,6 +86,9 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
         ImageButton memory_card15 = (ImageButton) findViewById(R.id.memory_card15);
         memory_card15.setOnClickListener(this);
 
+        Button reset = (Button) findViewById(R.id.reset);
+        reset.setOnClickListener(this);
+
         card = Arrays.asList(cardVector);
         Collections.shuffle(card);
         card.toArray(cardVector);
@@ -100,35 +109,27 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
         memory_card.setBackgroundResource(R.color.colorPrimary);
         switch (idfoto) {
             case 0:
-                //memory_card.setImageResource(R.drawable.memory_foto1);
                 Picasso.with(MemoryActivity.this).load(R.mipmap.ic_account).into(memory_card);
                 break;
             case 1:
-                //memory_card.setImageResource(R.drawable.memory_foto2);
                 Picasso.with(MemoryActivity.this).load(R.mipmap.ic_apps).into(memory_card);
                 break;
             case 2:
-                //memory_card.setImageResource(R.drawable.memory_foto3);
                 Picasso.with(MemoryActivity.this).load(R.mipmap.ic_calculator).into(memory_card);
                 break;
             case 3:
-                //memory_card.setImageResource(R.drawable.memory_foto4);
                 Picasso.with(MemoryActivity.this).load(R.mipmap.ic_earth).into(memory_card);
                 break;
             case 4:
-                //memory_card.setImageResource(R.drawable.memory_foto5);
                 Picasso.with(MemoryActivity.this).load(R.mipmap.ic_lock).into(memory_card);
                 break;
             case 5:
-                //memory_card.setImageResource(R.drawable.memory_foto6);
                 Picasso.with(MemoryActivity.this).load(R.mipmap.ic_music_note).into(memory_card);
                 break;
             case 6:
-                //memory_card.setImageResource(R.drawable.memory_foto7);
                 Picasso.with(MemoryActivity.this).load(R.mipmap.ic_phone_in_talk).into(memory_card);
                 break;
             case 7:
-                //memory_card.setImageResource(R.drawable.memory_foto8);
                 Picasso.with(MemoryActivity.this).load(R.mipmap.ic_cloud_circle).into(memory_card);
                 break;
         }
@@ -218,7 +219,11 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
                 else actual = 15;
                 image_memory(15);
                 break;
+
+            case R.id.reset:
+                reset_memory();
         }
+
         if (anterior != actual) { //no ha encertat la parella
             ++attempts;
             if (attempts % 2 == 0) {
@@ -236,13 +241,28 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
                 }
                 else {
                     ++trobats;
+                    ImageButton memory_card1 = (ImageButton) findViewById(getResources().getIdentifier("memory_card"+actual,"id",MemoryActivity.this.getPackageName()));
+                    ImageButton memory_card2 = (ImageButton) findViewById(getResources().getIdentifier("memory_card"+anterior,"id",MemoryActivity.this.getPackageName()));
+                    memory_card1.setOnClickListener(null);
+                    memory_card2.setOnClickListener(null);
                 }
             }
         }
         if (trobats == 8) {
-            if (attempts < Integer.parseInt(helper.selectAttempts(helper.select_active()))){
-                mySQLH.updateBestAttempts(mySQLH.select_active(), attempts/2);
-            }
+            Log.v("HE ACABAT", "!!!!!");
+            helper.setIntents(attempts);
+            reset_memory();
+            set();
         }
+    }
+
+    public void reset_memory(){
+        for(int i = 0; i < 16; ++i){
+            ImageButton memory = (ImageButton) findViewById(getResources().getIdentifier("memory_card"+i,"id",MemoryActivity.this.getPackageName()));
+            memory.setBackgroundResource(R.drawable.memory_fons);
+        }
+        TextView text_attempts = (TextView) findViewById(R.id.intents);
+        text_attempts.setText("0");
+        attempts = 0;
     }
 }
