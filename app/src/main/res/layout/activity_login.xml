@@ -11,7 +11,11 @@
         android:gravity="center"
         android:textColor="#FFFF"
         android:textStyle="bold"
-        android:layout_marginTop="130dp"/>
+        android:layout_marginTop="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textView" />
 
     <EditText
         android:id="@+id/username"
@@ -19,9 +23,11 @@
         android:layout_height="50dp"
         android:hint="Username"
         android:gravity="center"
-        android:layout_marginTop="200dp"
         android:background="#FFFF"
-        android:textColorHint="@color/colorPrimaryLight" />
+        android:textColorHint="@color/colorPrimaryLight"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/password"
@@ -29,10 +35,12 @@
         android:layout_height="50dp"
         android:hint="Password"
         android:gravity="center"
-        android:layout_below="@id/username"
         android:background="#FFFF"
         android:inputType="textPassword"
-        android:textColorHint="@color/colorPrimaryLight"/>
+        android:textColorHint="@color/colorPrimaryLight"
+        android:layout_below="@+id/username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/entrar"
@@ -43,10 +51,9 @@
         android:textColor="@color/colorPrimaryLight"
         android:textSize="40dp"
         android:gravity="center"
-        android:layout_below="@id/password"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="80dp"
-        />
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/registre"
@@ -57,9 +64,9 @@
         android:textColor="@color/colorPrimaryLight"
         android:textSize="20dp"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="80dp"
-        android:layout_below="@id/entrar"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/entrar"
+        android:layout_alignStart="@+id/entrar"
+        android:layout_marginBottom="11dp" />
 
 </RelativeLayout>

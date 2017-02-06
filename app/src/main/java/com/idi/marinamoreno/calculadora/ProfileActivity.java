@@ -36,8 +36,6 @@ public class ProfileActivity extends BaseActivity implements View.OnClickListene
 
     private Switch estat;
     private Switch toast;
-    private ImageView ivImage;
-    private String direccion_imagen = "";
     private SharedPreferences sp;
     private Boolean bEstat;
     private Boolean bToast;

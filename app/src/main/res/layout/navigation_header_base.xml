@@ -27,17 +27,6 @@
             android:elevation="3dp"
             />
 
-        <TextView
-            android:id="@+id/header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="username"
-            android:textColor="#FFFF"
-            android:layout_marginTop="180dp"
-            android:layout_marginLeft="140dp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"/>
-
     </RelativeLayout>
 
 </LinearLayout>

@@ -109,28 +109,28 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
         memory_card.setBackgroundResource(R.color.colorPrimary);
         switch (idfoto) {
             case 0:
-                Picasso.with(MemoryActivity.this).load(R.mipmap.ic_account).into(memory_card);
+                Picasso.with(MemoryActivity.this).load(R.drawable.memory_foto1).fit().centerCrop().into(memory_card);
                 break;
             case 1:
-                Picasso.with(MemoryActivity.this).load(R.mipmap.ic_apps).into(memory_card);
+                Picasso.with(MemoryActivity.this).load(R.drawable.memory_foto2).fit().centerCrop().into(memory_card);
                 break;
             case 2:
-                Picasso.with(MemoryActivity.this).load(R.mipmap.ic_calculator).into(memory_card);
+                Picasso.with(MemoryActivity.this).load(R.drawable.memory_foto3).fit().centerCrop().into(memory_card);
                 break;
             case 3:
-                Picasso.with(MemoryActivity.this).load(R.mipmap.ic_earth).into(memory_card);
+                Picasso.with(MemoryActivity.this).load(R.drawable.memory_foto4).fit().centerCrop().into(memory_card);
                 break;
             case 4:
-                Picasso.with(MemoryActivity.this).load(R.mipmap.ic_lock).into(memory_card);
+                Picasso.with(MemoryActivity.this).load(R.drawable.memory_foto5).fit().centerCrop().into(memory_card);
                 break;
             case 5:
-                Picasso.with(MemoryActivity.this).load(R.mipmap.ic_music_note).into(memory_card);
+                Picasso.with(MemoryActivity.this).load(R.drawable.memory_foto6).fit().centerCrop().into(memory_card);
                 break;
             case 6:
-                Picasso.with(MemoryActivity.this).load(R.mipmap.ic_phone_in_talk).into(memory_card);
+                Picasso.with(MemoryActivity.this).load(R.drawable.memory_foto7).fit().centerCrop().into(memory_card);
                 break;
             case 7:
-                Picasso.with(MemoryActivity.this).load(R.mipmap.ic_cloud_circle).into(memory_card);
+                Picasso.with(MemoryActivity.this).load(R.drawable.memory_foto8).fit().centerCrop().into(memory_card);
                 break;
         }
     }
@@ -224,7 +224,7 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
                 reset_memory();
         }
 
-        if (anterior != actual) { //no ha encertat la parella
+        if (anterior != actual) {
             ++attempts;
             if (attempts % 2 == 0) {
                 Integer aux = attempts/2;
@@ -236,8 +236,16 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
                             reset_image(anterior, actual);
                             anterior = -1;
                             actual = -1;
+                            for (Integer i =0; i<16; ++i) {
+                                ImageButton memory_card = (ImageButton) findViewById(getResources().getIdentifier("memory_card" + i, "id", MemoryActivity.this.getPackageName()));
+                                memory_card.setOnClickListener(MemoryActivity.this);
+                            }
                         }
                     }, 1000);
+                    for (Integer i =0; i<16; ++i) {
+                        ImageButton memory_card = (ImageButton) findViewById(getResources().getIdentifier("memory_card" + i, "id", MemoryActivity.this.getPackageName()));
+                        memory_card.setOnClickListener(null);
+                    }
                 }
                 else {
                     ++trobats;
@@ -247,13 +255,13 @@ public class MemoryActivity extends BaseActivity implements View.OnClickListener
                     memory_card2.setOnClickListener(null);
                 }
             }
+            if (trobats == 8) {
+                helper.setIntents(attempts);
+                reset_memory();
+                set();
+            }
         }
-        if (trobats == 8) {
-            Log.v("HE ACABAT", "!!!!!");
-            helper.setIntents(attempts);
-            reset_memory();
-            set();
-        }
+
     }
 
     public void reset_memory(){

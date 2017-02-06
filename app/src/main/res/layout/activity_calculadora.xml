@@ -15,20 +15,23 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="bottom">
             <ImageButton
                 android:layout_marginTop="20dp"
                 android:id="@+id/phone"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@mipmap/ic_phone_in_talk"
                 android:layout_gravity="left"/>
             <ImageButton
                 android:id="@+id/internet"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@mipmap/ic_earth"
                 android:layout_gravity="left"
+                android:layout_marginTop="10dp"
                 />
         </LinearLayout>
 
@@ -36,7 +39,7 @@
             android:layout_weight="4"
             android:id="@+id/num"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="70dp"
@@ -44,7 +47,8 @@
             android:inputType="number"
             android:textColorHint="@color/colorPrimaryText"
             android:textColor="@color/colorPrimaryText"
-            android:maxLength="7" >
+            android:maxLength="9"
+            android:layout_gravity="bottom">
         </TextView>
 
     </TableRow>
